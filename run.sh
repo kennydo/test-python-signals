@@ -1,12 +1,14 @@
 #!/bin/bash
 WORKER_PID=''
 
-send_usr1_to_worker(){
+handle_sig_term(){
+    echo "Sending USR1 to $WORKER_PID"
     kill -USR1 $WORKER_PID
+    echo "Waiting for $WORKER_PID"
     wait $WORKER_PID
 }
 
-trap 'send_usr1_to_worker' TERM INT
+trap 'handle_sig_term' TERM
 
 python3 /code/run_python_workers.py & WORKER_PID=$!
 wait $WORKER_PID
