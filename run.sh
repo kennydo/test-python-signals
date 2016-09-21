@@ -10,5 +10,5 @@ handle_sig_term(){
 
 trap 'handle_sig_term' TERM
 
-python3 /code/run_python_workers.py & WORKER_PID=$!
+python3 run_python_workers.py & WORKER_PID=$!
 wait $WORKER_PID

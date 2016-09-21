@@ -68,7 +68,7 @@ class Runner:
 
     def handle_termination_signal(self, signum, frame):
         my_pid = os.getpid()
-        logging.info("PID {0} received termination signal {1!r}".format(my_pid, signal.Signals(signum)))
+        logging.info("PID {0} received termination signal {1!r}".format(my_pid, signum))
         self.has_received_termination_signal = True
 
     def acquire_worker_semaphore(self):
