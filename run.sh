@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python run_python_workers.py
+python3 run_python_workers.py
