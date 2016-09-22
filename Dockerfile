@@ -5,4 +5,4 @@ COPY run_python_workers.py /code/run_python_workers.py
 
 WORKDIR /code
 
-CMD ["./run.sh"]
+ENTRYPOINT ["./run.sh"]
